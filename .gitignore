@@ -1,2 +1,6 @@
 .DS_Store
-dist
+*.tar.zst
+*.tgz
+*.tar.gz
+*.files
+*.db
