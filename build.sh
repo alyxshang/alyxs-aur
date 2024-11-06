@@ -12,9 +12,10 @@ setup_env(){
 build_pkgs(){
     for d in * ; do
         if [ -d $d ]; then
-            echo "Building package $d"
+           echo "---Building package $d---"
             cd $d
-            makepkg -S
+            makepkg --skipinteg
+            ls
             mv *.tar.zst ../../repo
             cd ..
         fi
@@ -23,16 +24,16 @@ build_pkgs(){
 }
 
 build_repo(){
-    mkdir repo/any
-    mv repo/*.tar.zst any
-    cd any
+    mkdir repo/x86_64
+    mv repo/*.tar.zst x86_64
+    cd x86_64
     repo-add alyxs-aur.db.tar.gz *.tar.zst
     rm -rf alyxs-aur.db alyxs-aur.files
     mv alyxs-aur.db.tar.gz alyxs-aur.db
     mv alyxs-aur.files.tar.gz alyxs-aur.files
     cd ..
-    tar -cvzf any.tgz any
-    mv any.tgz ..
+    tar -cvzf any.tgz x86_64
+    mv x86_64.tgz ..
 }
 
 clean_up(){

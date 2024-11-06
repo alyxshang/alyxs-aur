@@ -11,11 +11,11 @@ makedepends=('rust')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname.rs-v.$pkgver"
   cargo build --release
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "$pkgname.rs-v.$pkgver"
   install -Dm755 "target/release/luhny" "$pkgdir/usr/bin/luhny"
 }
