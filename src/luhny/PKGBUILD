@@ -6,7 +6,6 @@ pkgdesc="A library and tool to validate unique device identifiers."
 arch=('x86_64')
 url="https://github.com/alyxshang/luhny.rs"
 license=('custom')
-depends=('rust')
 makedepends=('rust')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
 
