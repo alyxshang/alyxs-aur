@@ -12,12 +12,12 @@ jobs:
         run: docker --debug build -t arch_repo .
       
       - name: "Run the Docker image."
-        run: docker run arch_repo --name arch_pkgs
+        run: docker run --name arch_pkgs arch_repo
       
       - name: "Copy repo to GitHub Actions disk."
         run: docker cp arch_pkgs:/home/builduser/x86_64.tgz .
       
-      - name: "Extract repo."
+      - name: "Extract the repo."
         run: tar -xvzf x86_64.tgz
       
       - name: "Deploy the repo."
