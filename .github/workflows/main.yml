@@ -18,10 +18,13 @@ jobs:
         run: docker cp arch_pkgs:/home/builduser/x86_64.tgz .
       
       - name: "Extract the repo."
-        run: tar -xvzf x86_64.tgz
+        run: |
+          tar -xvzf x86_64.tgz
+          mkdir dist
+          mv x86_64 dist
       
       - name: "Deploy the repo."
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: x86_64    
+          folder: dist
