@@ -1,0 +1,21 @@
+# Maintainer: https://github.com/alyxshang
+pkgname=luhny
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A library and tool to validate unique device identifiers."
+arch=('any')
+url="https://github.com/alyxshang/luhny.rs"
+license=('custom')
+depends=('rust')
+makedepends=('rust')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 "target/release/luhny" "$pkgdir/usr/bin/luhny"
+}

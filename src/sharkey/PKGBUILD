@@ -1,0 +1,21 @@
+# Maintainer: https://github.com/alyxshang
+pkgname=sharkey
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="A tiny library and CLI tool to perform actions on Sharkey using Rust."
+arch=('any')
+url="https://github.com/alyxshang/sharkey.rs"
+license=('custom')
+depends=('rust')
+makedepends=('rust')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 "target/release/sharkey" "$pkgdir/usr/bin/sharkey"
+}
