@@ -15,7 +15,7 @@ jobs:
         run: docker run arch_repo
       
       - name: "Copy repo to GitHub Actions disk."
-        run: docker cp arch_repo:/home/builduser/x86_64.tgz .
+        run: docker cp archlinux:/home/builduser/x86_64.tgz .
       
       - name: "Extract repo."
         run: tar -xvzf x86_64.tgz
