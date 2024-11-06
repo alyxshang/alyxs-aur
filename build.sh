@@ -16,6 +16,7 @@ build_pkgs(){
             cd $d
             makepkg --skipinteg
             ls
+            rm -rf *-debug-*.tar.zst
             mv *.tar.zst ../../repo
             cd ..
         fi
@@ -24,7 +25,7 @@ build_pkgs(){
 }
 
 build_repo(){
-    mkdir repo/x86_64
+    mkdir x86_64
     mv repo/*.tar.zst x86_64
     cd x86_64
     repo-add alyxs-aur.db.tar.gz *.tar.zst
@@ -32,12 +33,15 @@ build_repo(){
     mv alyxs-aur.db.tar.gz alyxs-aur.db
     mv alyxs-aur.files.tar.gz alyxs-aur.files
     cd ..
-    tar -cvzf any.tgz x86_64
+    ls x86_64
+    tar -cvzf x86_64.tgz x86_64
     mv x86_64.tgz ..
 }
 
 clean_up(){
+    cd ..
     rm -rf build
+    ls
 }
 
 setup_env
