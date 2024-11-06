@@ -6,7 +6,6 @@ pkgdesc="A light and fast static-site generator."
 arch=('x86_64')
 url="https://github.com/alyxshang/mandy"
 license=('custom')
-depends=('rust')
 makedepends=('rust')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname/archive/refs/tags/v.$pkgver.tar.gz")
 

@@ -6,7 +6,6 @@ pkgdesc="A tiny library and CLI tool to perform actions on Sharkey using Rust."
 arch=('x86_64')
 url="https://github.com/alyxshang/sharkey.rs"
 license=('custom')
-depends=('rust')
 makedepends=('rust')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/alyxshang/$pkgname.rs/archive/refs/tags/v.$pkgver.tar.gz")
 
