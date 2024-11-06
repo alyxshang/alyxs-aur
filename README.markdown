@@ -6,7 +6,7 @@
 
 ## ABOUT :books:
 
-This repository contains the source code for a package repository for a set of packages of my own for Arch Linux. The packages featured in this repository are tools I have developed. The packages in this package repository are purely source-based. No binaries are shipped to users of Arch Linux.
+This repository contains the source code for a package repository for a set of packages of my own for Arch Linux. The packages featured in this repository are tools I have developed. The packages in this package repository are compiled for the `x86_64` architecture.
 
 ## INSTALLATION :inbox_tray:
 
